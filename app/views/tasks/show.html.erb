@@ -1,0 +1,18 @@
+<div class="container text-center justify-content-center mt-4">
+
+  <h2><%= @task.title %></h2> <br>
+  <p><%= @task.details %></p> <br>
+  <p><%= @message %></p>
+
+  <ul class="list-group list-group-horizontal justify-content-center">
+    <li class="list-group-item"><%= link_to 'Return to home', root_path %>
+  </li>
+    <li class="list-group-item"><%= link_to 'Edit', edit_task_path(@task) %>
+  </li>
+    <li class="list-group-item"><%= link_to "Delete task",
+              task_path(@task),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %></li>
+  </ul>
+</div>
+

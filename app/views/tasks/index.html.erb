@@ -1,0 +1,19 @@
+<div class="container-sm text-center justify-content-center mt-4">
+  <h1>My Tasks for Today</h1>
+
+
+  <ul class="list-group my-3">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item justify-content-between d-flex">
+        <div>
+          <span class="mr-3"><%= check_box_tag 'completed', 'completed', task.completed %></span>
+          <%= link_to task.title, task_path(task)  %>
+        </div>
+        <%= link_to '🗑', delete_task_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'create a new task', new_task_path %>
+</div>
+
